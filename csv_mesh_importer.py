@@ -65,9 +65,9 @@ class CSVMeshImporterOperator(bpy.types.Operator, ImportHelper):
                 vertices = []
                 
                 for row in reader:                 
-                    x = float(row[headers['SV_Position.x']])
-                    y = float(row[headers['SV_Position.y']])
-                    z = float(row[headers['SV_Position.z']])
+                    x = float(row[headers['SV_Position.x']])/float(row[headers['SV_Position.w']])
+                    y = float(row[headers['SV_Position.y']])/float(row[headers['SV_Position.w']])
+                    z = float(row[headers['SV_Position.z']])/float(row[headers['SV_Position.w']])
 
                     vertices.append((x, y, z))
                             
